@@ -21,7 +21,8 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <h1 class="logo">ABHISHEK GAONKAR</h1>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="menuToggle">☰</div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -680,6 +681,8 @@
     <!-- JavaScript -->
     <script>
         const navbar = document.getElementById("navbar");
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
         let lastScrollY = window.scrollY;
 
         window.addEventListener("scroll", () => {
@@ -689,6 +692,17 @@
                 navbar.classList.remove("hidden"); // Show navbar on scroll up
             }
             lastScrollY = window.scrollY;
+        });
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
     </script>
 
