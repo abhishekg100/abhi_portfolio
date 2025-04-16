@@ -21,7 +21,8 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <h1 class="logo">ABHISHEK GAONKAR</h1>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="menuToggle">☰</div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -107,7 +108,7 @@
                 <h1>Web Designer</h1>
                 <p>
                     I am a recent MCA graduate from St. Aloysius, with a strong foundation in web development using
-                    HTML5, CSS3, JavaScript, ReactJS, NodeJS and MySQL. I am passionate about combining these
+                    HTML5, CSS3, JavaScript, ReactJS, NodeJS and MongoDB. I am passionate about combining these
                     skills to create innovative, user-centric solutions and contribute to projects that leverage
                     cutting-edge technologies.
                 </p>
@@ -184,14 +185,16 @@
         </div>
         <div class="experience-container">
             <div class="experience-item">
-                <h3>MERN Stack Website Developer @ Calypso Innovations</h3>
-                <p>March - Present</p>
+                <h3>MERN Stack Website Developer @ SOFTIONIK SOLUTIONS PVT LTD</h3>
+                <p>March - June</p>
                 <ul>
                     <!-- <li>Diagnosed and resolved website performance, security and functionality issues.</li>
                     <li>Managed server maintenance, API integrations and hosting-related troubleshooting..</li>
                     <li>Optimized website speed and performance using caching, minification and database indexing.</li> -->
-                    <li>Intership</li>
-                    <li>Intership</li>
+                    <li> Developed a real-time web chat app (Blink_Chat) using React, Node.js, Socket.IO, MongoDB, and Cloudinary with secure login and live messaging.</li>
+                    <li>Built full-stack architecture with responsive UI, used Socket.IO for real-time updates, and ensured cross-browser compatibility through testing.
+
+                    </li>
                 </ul>
             </div>
 
@@ -279,6 +282,165 @@
         <div class="project-container">
             <!-- Text Section -->
             <div class="project-text">
+                <h1>Blink_Chat</h1>
+                <p class="technology">Technology: Web Development</p>
+
+                <ul class="features">
+                    <li>Built Blink_Chat using React.js, Node.js, and Socket.IO for real-time messaging.
+                        Enabled instant chat, profile updates, and online/offline status—all in the browser.</li>
+                    <li>Designed a responsive UI with TailwindCSS and React.js.
+                        Integrated Cloudinary for fast, scalable image and media storage.</li>
+                    <li>Handled everything from planning to deployment with CI/CD pipelines.
+                        Conducted unit, integration, and UI tests for performance and reliability.</li>
+                </ul>
+                <button class="read-more-button" id="tran">
+                    <span>Read More</span>
+                    <span>→</span>
+                </button>
+                <div class="reveal" id="reveal"></div>
+
+                <script>
+                    const pages = ["page2.html"];
+                    let currentPage = 0;
+
+                    const button = document.getElementById("tran");
+                    button.addEventListener("click", (event) => {
+                        const buttonRect = button.getBoundingClientRect();
+                        const x = buttonRect.left + buttonRect.width / 2;
+                        const y = buttonRect.top + buttonRect.height / 2;
+
+                        // Trigger the animation
+                        const reveal = document.getElementById("reveal");
+                        reveal.style.backgroundColor = "#000"; // Set the transition color
+
+                        anime({
+                            targets: reveal,
+                            clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
+                            easing: "easeInOutQuad",
+                            duration: 1000,
+                            complete: () => {
+                                // Increment the page index
+                                currentPage++;
+
+                                // Check if there are more pages
+                                if (currentPage >= pages.length) {
+                                    currentPage = 0; // Reset to the first page if it exceeds
+                                }
+
+                                // Redirect to the next page
+                                window.location.href = pages[currentPage];
+                            }
+                        });
+                    });
+                </script>
+
+                
+
+            </div>
+
+
+            <!-- Image Carousel Section -->
+            <div class="project-image1">
+                <img src="pro1.jpeg" alt="Rider Detection" class="active">
+                <img src="pro2.jpeg" alt="Processing Data">
+                <img src="pro3.jpeg" alt="Generated Reports">
+                <img src="pro4.jpeg" alt="Report Details">
+                <img src="pro5.jpeg" alt="Twilio Alerts">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Image Carousel JavaScript
+        const images = document.querySelectorAll('.project-image1 img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        // Switch images every 3 seconds
+        setInterval(showNextImage, 2000);
+    </script>
+    <section class="project-section" id="clinic-appointment">
+
+        <div class="project-container">
+            <!-- Image Section -->
+            <div class="project-image2">
+                <img src="C1.jpeg" alt="Clinic Appointment System" class="active">
+                <img src="C2.jpeg" alt="Appointment Scheduling">
+                <img src="C3.jpeg" alt="Doctor Availability">
+                <img src="C4.jpeg" alt="Patient Management">
+                <img src="C5.jpeg" alt="doc_image">
+            </div>
+
+
+            
+            <!-- Text Section -->
+            <div class="project-text">
+                <h1>Clinic Appointment System</h1>
+                <p class="technology">Technology: Web Development</p>
+
+                <ul class="features">
+                    <li>Allows patients to book appointments with available doctors.</li>
+                    <li>Doctors can manage their availability and view patient details.</li>
+                    <li>Admin can oversee all appointments, update clinic details, and manage users.</li>
+                </ul>
+                <!-- <a href="#" class="read-more" onclick="showPDF(event)">Read More →</a> -->
+
+                <button class="read-more-button" id="tran2">
+                    <span>Read More</span>
+                    <span>→</span>
+                </button>
+                <div class="reveal2" id="reveal2"></div>
+
+
+
+
+                <script>
+                    const pages2 = ["Rp2.html"];
+                    let currentPage2 = 0;
+
+                    const button2 = document.getElementById("tran2"); // Correct reference to button2
+                    button2.addEventListener("click", (event) => { // Use button2 instead of button
+                        const buttonRect = button2.getBoundingClientRect();
+                        const x = buttonRect.left + buttonRect.width / 2;
+                        const y = buttonRect.top + buttonRect.height / 2;
+
+                        // Trigger the animation
+                        const reveal2 = document.getElementById("reveal2");
+                        reveal2.style.backgroundColor = "#000"; // Set the transition color
+
+                        anime({
+                            targets: reveal2,
+                            clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
+                            easing: "easeInOutQuad",
+                            duration: 1000,
+                            complete: () => {
+                                // Increment the page index
+                                currentPage2++;
+
+                                // Check if there are more pages
+                                if (currentPage2 >= pages2.length) {
+                                    currentPage2 = 0; // Reset to the first page if it exceeds
+                                }
+
+                                // Redirect to the next page
+                                window.location.href = pages2[currentPage2];
+                            }
+                        });
+                    });
+                </script>
+
+            </div>
+
+
+
+            <div class="project-container">
+            <!-- Text Section -->
+            <div class="project-text">
                 <h1>Srushti Power System</h1>
                 <p class="technology">Technology: Web Development</p>
 
@@ -331,6 +493,8 @@
                     });
                 </script>
 
+                
+
             </div>
 
 
@@ -370,61 +534,6 @@
                 <img src="C4.jpeg" alt="Patient Management">
                 <img src="C5.jpeg" alt="doc_image">
             </div>
-
-            <!-- Text Section -->
-            <div class="project-text">
-                <h1>Clinic Appointment System</h1>
-                <p class="technology">Technology: Web Development</p>
-
-                <ul class="features">
-                    <li>Allows patients to book appointments with available doctors.</li>
-                    <li>Doctors can manage their availability and view patient details.</li>
-                    <li>Admin can oversee all appointments, update clinic details, and manage users.</li>
-                </ul>
-                <!-- <a href="#" class="read-more" onclick="showPDF(event)">Read More →</a> -->
-
-                <button class="read-more-button" id="tran2">
-                    <span>Read More</span>
-                    <span>→</span>
-                </button>
-                <div class="reveal2" id="reveal2"></div>
-
-                <script>
-                    const pages2 = ["Rp2.html"];
-                    let currentPage2 = 0;
-
-                    const button2 = document.getElementById("tran2"); // Correct reference to button2
-                    button2.addEventListener("click", (event) => { // Use button2 instead of button
-                        const buttonRect = button2.getBoundingClientRect();
-                        const x = buttonRect.left + buttonRect.width / 2;
-                        const y = buttonRect.top + buttonRect.height / 2;
-
-                        // Trigger the animation
-                        const reveal2 = document.getElementById("reveal2");
-                        reveal2.style.backgroundColor = "#000"; // Set the transition color
-
-                        anime({
-                            targets: reveal2,
-                            clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
-                            easing: "easeInOutQuad",
-                            duration: 1000,
-                            complete: () => {
-                                // Increment the page index
-                                currentPage2++;
-
-                                // Check if there are more pages
-                                if (currentPage2 >= pages2.length) {
-                                    currentPage2 = 0; // Reset to the first page if it exceeds
-                                }
-
-                                // Redirect to the next page
-                                window.location.href = pages2[currentPage2];
-                            }
-                        });
-                    });
-                </script>
-
-            </div>
         </div>
     </section>
 
@@ -445,8 +554,7 @@
     </script>
 
 
-
-
+    
     <section id="proficiency" class="proficiency">
         <!-- Background Video Wrapper -->
         <video autoplay muted loop id="background-video">
@@ -600,7 +708,7 @@
             <div class="education-items">
                 <div class="education-item">
                     <h3>MCA - St. Aloysius</h3>
-                    <p><strong>2023 - Present</strong></p>
+                    <p><strong>2024 - Present</strong></p>
                     <p>Focused on web development, .net and AWS Cloud services.</p>
                 </div>
                 <div class="education-item">
@@ -680,6 +788,8 @@
     <!-- JavaScript -->
     <script>
         const navbar = document.getElementById("navbar");
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
         let lastScrollY = window.scrollY;
 
         window.addEventListener("scroll", () => {
@@ -690,12 +800,20 @@
             }
             lastScrollY = window.scrollY;
         });
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
 
 
 </body>
 
 </html>
-
-
- 
