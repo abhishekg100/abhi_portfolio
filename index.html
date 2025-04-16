@@ -1,210 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ABHISHEK.G</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABHISHEK.G</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
 
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
 
-  <style>
-    /* Default Styles */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      box-sizing: border-box;
-    }
-
-    .navbar {
-      background: #000;
-      color: #fff;
-      padding: 15px 20px;
-      position: relative;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: white;
-    }
-
-    .hero {
-      background: linear-gradient(to right, #111, #222);
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    /* Responsive Styles */
-    @media screen and (max-width: 768px) {
-      .container {
-        padding: 0 15px;
-      }
-
-      .menu-toggle {
-        display: block !important;
-      }
-
-      .nav-links {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background: #000;
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li {
-        margin: 15px 0;
-      }
-
-      .project-container,
-      .about-container,
-      .contact-links,
-      .row {
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-
-      .project-text,
-      .project-image1,
-      .project-image2,
-      .about-text,
-      .about-image,
-      .card,
-      .contact-item {
-        width: 100%;
-        margin: 10px 0;
-        padding: 0 10px;
-      }
-
-      .card {
-        width: calc(100% - 20px);
-      }
-
-      .hero-content h1 {
-        font-size: 24px;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <h1 class="logo">ABHISHEK GAONKAR</h1>
-      <div class="menu-toggle" id="menuToggle">☰</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#proficiency">Proficiency</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1 id="random-text"></h1>
-    </div>
-  </header>
 
-  <script>
-    const targetText = "Welcome! Lets build";
-    const textElement = document.getElementById("random-text");
-    const letters = "abcdefghijklmnopqrstuvwxyz";
 
-    function getRandomChar() {
-      return letters[Math.floor(Math.random() * letters.length)];
-    }
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <h1 class="logo">ABHISHEK GAONKAR</h1>
+            <div class="menu-toggle" id="menuToggle">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#proficiency">Proficiency</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    async function animateText() {
-      let currentText = "";
-      textElement.innerText = currentText;
 
-      for (let i = 0; i < targetText.length; i++) {
-        const char = targetText[i];
-        if (char === " ") {
-          currentText += " ";
-          textElement.innerText = currentText;
-          continue;
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 id="random-text"></h1>
+            <!-- <p>I'm Adarsh, a passionate developer ready to bring your ideas to life.</p> -->
+        </div>
+    </header>
+
+    <script>
+        const targetText = "Welcome! Lets build"; // Original text
+        const textElement = document.getElementById("random-text");
+        const letters = "abcdefghijklmnopqrstuvwxyz"; // Random character pool
+
+        // Function to generate random characters
+        function getRandomChar() {
+            return letters[Math.floor(Math.random() * letters.length)];
         }
-        await animateLetter(char, i, currentText);
-        currentText += char;
-      }
-    }
 
-    function animateLetter(letter, index, currentText) {
-      return new Promise(resolve => {
-        let iterations = 0;
-        const maxIterations = 5;
-        const interval = setInterval(() => {
-          const currentTextArray = currentText.split("");
-          currentTextArray[index] = getRandomChar();
-          textElement.innerText = currentTextArray.join("");
-          iterations++;
-          if (iterations === maxIterations) {
-            currentTextArray[index] = letter;
-            textElement.innerText = currentTextArray.join("");
-            clearInterval(interval);
-            resolve();
-          }
-        }, 40);
-      });
-    }
+        // Function to animate the entire text from left to right
+        async function animateText() {
+            let currentText = "";  // Start with an empty text
+            textElement.innerText = currentText;  // Set the initial text to empty
 
-    window.addEventListener("load", animateText);
+            // Now animate each letter from left to right
+            for (let i = 0; i < targetText.length; i++) {
+                const char = targetText[i];
+                if (char === " ") {
+                    currentText += " "; // Add space directly, no animation needed
+                    textElement.innerText = currentText; // Update text
+                    continue; // Skip space
+                }
+                await animateLetter(char, i, currentText); // Animate non-space characters
+                currentText += char; // Add the original character after animation
+            }
+        }
 
-    // Mobile Menu Toggle
-    document.getElementById("menuToggle").addEventListener("click", function () {
-      document.getElementById("navLinks").classList.toggle("active");
-    });
-  </script>
-</body>
-</html>
+        // Function to animate a single letter
+        function animateLetter(letter, index, currentText) {
+            return new Promise(resolve => {
+                let iterations = 0;
+                const maxIterations = 5; // Number of random changes per letter
+                const interval = setInterval(() => {
+                    const currentTextArray = currentText.split("");  // Get the current text as an array
 
+                    // Replace current letter with a random character
+                    currentTextArray[index] = getRandomChar();
+                    textElement.innerText = currentTextArray.join("");  // Update the displayed text
+                    iterations++;
+
+                    if (iterations === maxIterations) {
+                        // Replace with the original letter and stop animation
+                        currentTextArray[index] = letter;
+                        textElement.innerText = currentTextArray.join("");  // Finalize the animation
+                        clearInterval(interval);
+                        resolve();  // Resolve the promise and move to next character
+                    }
+                }, 40); // Speed of random changes (100ms)
+            });
+        }
+
+        // Start animation once the page loads
+        window.addEventListener("load", animateText);
+    </script>
 
 
     <!-- Sections -->
