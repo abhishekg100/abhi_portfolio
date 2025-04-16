@@ -5,7 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABHISHEK.G</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+    <style>
+        /* Add these responsive styles */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #000;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .menu-toggle {
+                display: block !important;
+            }
+
+            .project-container {
+                flex-direction: column;
+            }
+
+            .project-text, .project-image1, .project-image2 {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .about-text, .about-image {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .row {
+                flex-wrap: wrap;
+            }
+
+            .card {
+                width: calc(50% - 20px);
+                margin: 10px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-item {
+                margin: 10px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
