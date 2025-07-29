@@ -3,9 +3,8 @@ body,
 html {
     margin: 0;
     padding: 0;
-    /* font-family: Arial, sans-serif; */
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
 }
 
 .container {
@@ -17,29 +16,7 @@ html {
 .container h1 {
     letter-spacing: 0.35em;
     font-weight: 600;
-
 }
-
-/* 
-.cursor {
-    background: url('ufo-cursor.png') no-repeat center / contain;
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-#proficiency.beam:hover~.cursor {
-    background: url('ufo-hover.png') no-repeat center / contain;
-    transform: translate(-50%, -100%);
-}
-
-*/
 
 /* Navbar */
 .navbar {
@@ -90,6 +67,14 @@ html {
     color: #007BFF;
 }
 
+/* Mobile Navigation Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #000000;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%),
@@ -97,9 +82,7 @@ html {
     min-height: 150vh;
     background-size: cover;
     color: #fff;
-    /* text-align: center; */
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
 }
 
@@ -108,7 +91,6 @@ html {
     padding-left: 33%;
     color: #000000;
     white-space: nowrap;
-
 }
 
 .hero h1 {
@@ -118,14 +100,11 @@ html {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     letter-spacing: 0.13em;
     white-space: nowrap;
-
-
 }
 
 .hero-content h1 {
     display: inline-block;
     white-space: nowrap;
-
 }
 
 .hero p {
@@ -177,9 +156,7 @@ html {
     min-height: 130vh;
     padding: 0 20px;
     background-color: #000;
-    /* Black background */
 }
-
 
 .about-container {
     font: sans-serif;
@@ -195,17 +172,13 @@ html {
     flex: 1;
     max-width: 50%;
     opacity: 0;
-    /* Initially hidden */
     transform: translateY(50px);
-    /* Start below the viewport */
     transition: opacity 0.8s ease, transform 0.8s ease;
-    /* Smooth transition */
 }
 
 .about-text.visible {
     opacity: 1;
     transform: translateY(0);
-    /* Slide into place */
 }
 
 .about-text h2 {
@@ -244,28 +217,6 @@ html {
     max-width: 170%;
     height: auto;
     object-fit: cover;
-    /* transition: transform 0.3s ease-in-out; */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-text,
-    .about-image {
-        max-width: 100%;
-    }
-
-    .about-text h1 {
-        font-size: 2rem;
-    }
-
-    .about-text p {
-        font-size: 0.9rem;
-    }
 }
 
 .line {
@@ -279,7 +230,6 @@ html {
 
 .line-inner {
     position: absolute;
-
     width: 50%;
     height: 5px;
     background-color: #ffffff;
@@ -293,18 +243,13 @@ html {
     justify-content: space-between;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     opacity: 0;
-    /* Start fully hidden */
     transform: translateY(50px);
-    /* Start slightly below its final position */
     transition: opacity 0.8s ease, transform 0.8s ease;
-    /* Smooth transition for slide-up effect */
 }
 
 .experience-container.visible {
     opacity: 1;
-    /* Fade in */
     transform: translateY(0);
-    /* Move to its final position */
 }
 
 .experience-item {
@@ -336,28 +281,22 @@ html {
 
 .e-line {
     width: 1px;
-    /* Set width to 1px for a vertical line */
     height: 250px;
     background-color: #000000;
     position: absolute;
     left: 3%;
-    /* Position the line in the middle */
-    /* top: 0; */
-
     transform: translateX(-50%);
 }
 
 .e-line-inner {
     position: absolute;
     top: 25%;
-    /* Adjust as needed */
     left: 0;
     width: 5px;
     height: 75px;
     background-color: #000000;
     transition: top 0.1s ease-out;
 }
-
 
 /* Project Section */
 .project-section {
@@ -382,9 +321,7 @@ html {
     font-size: 1.4rem;
     color: #333;
     text-transform: uppercase;
-    /* padding-top: 30px; */
 }
-
 
 .loader {
     --color: rgb(0, 0, 0);
@@ -392,7 +329,6 @@ html {
     --size-dot: 1.5vmin;
     --size-bar: 0.4vmin;
     --size-square: 3vmin;
-
     display: block;
     position: absolute;
     width: 25%;
@@ -427,17 +363,14 @@ html {
 }
 
 @keyframes loader-3 {
-
     0%,
     100% {
         transform: translateY(-2.6vmin);
     }
-
     44% {
         transform: translateY(2.6vmin);
     }
 }
-
 
 .p-line {
     z-index: 0;
@@ -446,12 +379,10 @@ html {
     background-color: #000000;
     position: absolute;
     margin-top: 20px;
-
 }
 
 .p-line-inner {
     position: absolute;
-
     width: 20%;
     height: 5px;
     background-color: #000000;
@@ -468,9 +399,7 @@ html {
 }
 
 .read-more-button {
-
     display: inline-flex;
-    /* Use flexbox for better alignment */
     align-items: center;
     background-color: #ffffff;
     justify-content: space-between;
@@ -480,13 +409,10 @@ html {
     border-radius: 5px;
     position: relative;
     transition: background-color 0.2s ease-out;
-    /* Position the button relative to its normal position */
     top: 20px;
 }
 
-
-
-.reveal {
+.reveal, .reveal2 {
     position: fixed;
     top: 0;
     left: 0;
@@ -496,24 +422,9 @@ html {
     clip-path: circle(0% at 50% 50%);
     z-index: 10;
 }
-
-
-.reveal2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    clip-path: circle(0% at 50% 50%);
-    z-index: 10;
-}
-
 
 .read-more-button:hover {
-
     display: inline-flex;
-    /* Use flexbox for better alignment */
     align-items: center;
     background-color: #000000;
     color: #ffffff;
@@ -536,7 +447,6 @@ html {
     flex: 1;
     max-width: 50%;
     padding: 20px;
-
 }
 
 .project-text h1 {
@@ -570,178 +480,74 @@ html {
     text-decoration: underline;
 }
 
-/* Image Section */
-.project-image1 {
+/* Project Image Containers - FIX: Add aspect ratio for height */
+.project-image1,
+.project-image2,
+.project-image3 { /* Added project-image3 */
     flex: 1;
     border-radius: 30px;
     max-width: 50%;
     position: relative;
     overflow: hidden;
+    padding-bottom: 28%; /* Aspect ratio (e.g., for 16:9, it's 9/16 = 0.5625 = 56.25%). Adjust as needed. This creates height.*/
+    height: 0; /* Important for padding-bottom trick */
 }
 
-.project-image1 img {
+/* Project Images inside containers */
+.project-image1 img,
+.project-image2 img,
+.project-image3 img { /* Added project-image3 */
     width: 100%;
-    height: auto;
+    height: 100%; /* Fill the height of the parent */
     object-fit: cover;
     position: absolute;
+    top: 0; /* Position absolutely within the relative parent */
+    left: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.project-image1 img.active {
-    opacity: 1;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .project-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .project-title {
-        text-align: center;
-    }
-
-    .project-text,
-    .project-image1 {
-        max-width: 100%;
-    }
-
-    .project-text h1 {
-        font-size: 2rem;
-    }
-
-    .project-text p {
-        font-size: 0.9rem;
-    }
-}
-
-
-
-
-/* Image Section */
-.project-image2 {
-    flex: 1;
-    max-width: 50%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 30px;
-    /* padding-left: 20px; */
-}
-
-.project-image2 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.project-image2 img.active {
+.project-image1 img.active,
+.project-image2 img.active,
+.project-image3 img.active { /* Added project-image3 */
     opacity: 1;
 }
 
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .project-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .project-title {
-        text-align: center;
-    }
-
-    .project-text,
-    .project-image2 {
-        max-width: 100%;
-    }
-
-    .project-text h1 {
-        font-size: 2rem;
-    }
-
-    .project-text p {
-        font-size: 0.9rem;
-    }
-}
-
-.space {
-    min-height: 10em;
-    background-color: #ffffff;
-}
-
-
-/* .new-transition {
-    background-color: #692f2f;
-    min-height: 39em;
-} */
-
-.new-transition {
-    background-color: #692f2f;
-    min-height: 39em;
-    transition: all 0.5s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.new-transition.shrink {
-    width: 30%;
-    height: 15em;
-    border-radius: 15px;
-    margin: 2em auto;
-    background-color: #692f2f;
-}
-
-
-/* proficiency */
-
+/* proficiency section - FIX: Adjust positioning for content */
 .proficiency {
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Changed to column to stack title and cards */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     position: relative;
-    /* background: linear-gradient(to bottom right, #000000 0%, #000000 100%); */
     min-height: 130vh;
-    /* background: url('eart_line2.mp4') no-repeat center center fixed; */
-    background-size: cover;
-    /* Ensure the video covers the entire section */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.534) 70%, rgb(0, 0, 0) 100%),
         center/cover no-repeat;
     opacity: 0;
-    /* Initially hidden */
     transform: translateY(50px);
-    /* Start slightly below the viewport */
     transition: opacity 0.8s ease, transform 0.8s ease;
-    /* Smooth transition */
-
-
+    padding-top: 60px; /* Add some padding to prevent content from touching navbar */
+    padding-bottom: 60px; /* Ensure space below content */
+    box-sizing: border-box; /* Include padding in height calculation */
 }
 
 #proficiency.visible {
     opacity: 1;
     transform: translateY(0);
-
-    /* Slide into place */
 }
 
 #proficiency .card {
     opacity: 0;
     transform: scale(0.1);
-    /* Slightly shrink */
     transition: opacity 0.5s ease, transform 0.5s ease;
     transition-delay: var(--card-delay, 0s);
-    /* Delay for staggered effect */
 }
 
 #proficiency .card.visible {
     opacity: 1;
     transform: scale(1);
-    /* Original size */
 }
 
 .star-container {
@@ -751,6 +557,7 @@ html {
     width: 95%;
     height: 200%;
     pointer-events: none;
+    z-index: 1; /* Below overlay-text */
 }
 
 .star {
@@ -765,40 +572,32 @@ html {
 }
 
 @keyframes twinkle {
-
     0%,
     20% {
         opacity: 0.5;
     }
-
     50% {
         opacity: 1;
         transform: scale(1.5);
     }
-
     80% {
         opacity: 0.5;
     }
 }
 
-
 @keyframes crawl {
     0% {
         transform: translate(0, 0);
     }
-
     25% {
         transform: translate(2vw, 2vh);
     }
-
     50% {
         transform: translate(-1vw, -1vh);
     }
-
     75% {
         transform: translate(1vw, -2vh);
     }
-
     100% {
         transform: translate(0, 0);
     }
@@ -812,31 +611,16 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Make sure the video covers the section */
-
-    /* Ensure the video stays behind the content */
-
-
+    z-index: 0; /* Ensure video is behind overlay-text */
 }
 
-
-
-.overlay-text {
-    z-index: 2;
-    /* Above animations */
+.overlay-text { /* FIX: Removed absolute positioning, now handled by parent flexbox */
+    z-index: 2; /* Above video */
     color: #fff;
     text-align: center;
     padding: 50px 20px;
-    position: absolute;
-    /* Ensure it overlays properly */
-    top: 50%;
-    /* Center vertically */
-    left: 50%;
-    /* Center horizontally */
-    transform: translate(-50%, -50%);
-    /* Adjust for exact centering */
     width: 90%;
-    /* Allow text to span full width */
+    /* Removed: position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); */
 }
 
 h2 {
@@ -866,30 +650,30 @@ h2::after {
 
 .card {
     background-color: #ffffff;
-    /* Light gray card background */
     color: #333;
-    /* Dark text */
     border-radius: 10px;
     width: 13%;
-    height: 9%;
+    height: 9%; /* Height might be problematic; better to rely on padding/content or min-height */
+    min-height: 80px; /* Ensure minimum height for cards */
     display: flex;
     flex-direction: row;
-    /* Changed from column to row */
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    padding: 10px; /* Add padding to cards */
+    box-sizing: border-box; /* Include padding in width/height */
 }
 
 .card img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    /* Adjusted for side-by-side layout */
 }
 
 .card span {
     font-size: 0.9rem;
+    white-space: nowrap; /* Prevent text wrapping within card span */
 }
 
 
@@ -898,39 +682,20 @@ h2::after {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-
 hr {
     margin: 40px auto;
     width: 80%;
     border: 0px solid #ffffff2b;
 }
 
-/* 
 #education {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 2%),
-        center/cover no-repeat;
-
-    min-height: 30em;
-    color: #ffffff;
-} */
-
-#education {
-    /* background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 2%); */
     background-color: #000;
     min-height: 30em;
     color: #ffffff;
     padding: 2em 1em;
+    box-sizing: border-box;
 }
 
-/* 
-.container {
-    display: flex;
-    flex-direction: column;
-align-items: center;
-}
-
-*/
 #education h2 {
     font-size: 2.5em;
     margin-bottom: 2em;
@@ -939,17 +704,13 @@ align-items: center;
     text-align: center;
     color: #ffffff;
     width: 100%;
-    /* Ensure full width for the heading */
 }
 
 .education-items {
     display: flex;
-    /* Align MCA and BCA side by side */
     justify-content: space-between;
     gap: 2%;
-    /* Space between the items */
     width: 100%;
-    /* Ensure the items fill the width of the container */
 }
 
 .education-item {
@@ -959,9 +720,8 @@ align-items: center;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     width: 48%;
-    /* Set the width of each item */
     transition: transform 0.3s ease, background-color 0.3s ease;
-    /* Smooth transition */
+    box-sizing: border-box;
 }
 
 .education-item h3 {
@@ -980,22 +740,16 @@ align-items: center;
 /* Hover effect */
 .education-item:hover {
     transform: scale(1.05);
-    /* Slightly enlarge the item */
     background-color: rgba(255, 255, 255, 0.21);
-    /* Change background color */
 }
 
-/* Optional: Invert text color for a more dramatic effect */
 .education-item:hover h3,
 .education-item:hover p {
     color: #000;
-    /* Invert text color to black */
 }
 
 .contact-section {
     background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%);
-
-
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -1004,6 +758,7 @@ align-items: center;
     align-items: center;
     overflow: hidden;
     color: rgb(0, 0, 0);
+    box-sizing: border-box;
 }
 
 .contact-section::before {
@@ -1017,37 +772,50 @@ align-items: center;
     z-index: 2;
 }
 
-
-
-#contact-bg-video {
+/* Videos inside contact section (if used) */
+#contact-bg-video,
+#video-forward,
+#video-reverse {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    z-index: 1; /* Below contact-overlay */
+    display: block; /* Default to block, rely on JS for active class */
 }
+
+#video-forward, #video-reverse {
+    display: none; /* Hide these initially if using a loop on contact-bg-video */
+}
+
+#video-forward.active,
+#video-reverse.active {
+    display: block;
+}
+
 
 .contact-overlay {
     position: relative;
-    z-index: 2;
+    z-index: 3; /* Above background and videos */
     background: rgba(0, 0, 0, 0);
-    /* Semi-transparent overlay for readability */
     padding: 50px 20px;
     text-align: center;
     width: 100%;
+    max-width: 800px; /* Constrain width of overlay content */
 }
 
 .contact-overlay h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #fff; /* Ensure contact h2 is white for contrast */
 }
 
 .contact-overlay p {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #000000;
+    color: #fff; /* Ensure contact p is white for contrast */
 }
 
 .contact-links {
@@ -1062,7 +830,7 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255); /* Changed to white for better visibility */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -1080,24 +848,831 @@ align-items: center;
 .contact-item:hover {
     transform: scale(1.1);
     color: #00bcd4;
-    /* Highlight color */
 }
 
-#video-forward,
-#video-reverse {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    display: none;
-    /* Start with both hidden */
+/* ----------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN STARTS HERE                  */
+/* ----------------------------------------------------------------------- */
+
+/* Mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Navbar adjustments */
+    .navbar .container {
+        height: 50px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        background-position: center bottom;
+    }
+
+    .hero-content {
+        padding-top: 50px;
+        padding-left: 5%;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+        white-space: normal;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* About Section */
+    .about-section {
+        min-height: auto;
+        padding: 40px 15px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-text {
+        max-width: 100%;
+        padding-top: 0;
+        text-align: center;
+    }
+
+    .about-text h2 {
+        padding-top: 0;
+        font-size: 0.9rem;
+    }
+
+    .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    .about-image {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .about-image img {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .line {
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .line-inner {
+        width: 80%;
+    }
+
+    /* Experience Section */
+    .experience-container {
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+        gap: 20px;
+    }
+
+    .experience p {
+        font-size: 1.2rem;
+        padding-left: 15px;
+        text-align: center;
+    }
+
+    .e-line {
+        left: 15px;
+        height: 150px;
+    }
+
+    .e-line-inner {
+        height: 50px;
+    }
+
+    /* Project Section */
+    .project-section {
+        min-height: auto;
+        padding: 40px 15px;
+    }
+
+    .project-title {
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .project-title p {
+        font-size: 1.2rem;
+    }
+
+    .loader {
+        width: 100%;
+        position: static;
+        margin-top: 10px;
+    }
+
+    .project-container {
+        flex-direction: column;
+        padding-left: 0;
+        gap: 30px;
+    }
+
+    .project-text,
+    .project-image1,
+    .project-image2,
+    .project-image3 { /* Added project-image3 */
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    /* FIX: Adjust project image container height for mobile */
+    .project-image1,
+    .project-image2,
+    .project-image3 {
+        padding-bottom: 56.25%; /* Standard 16:9 aspect ratio for mobile images */
+    }
+
+    .project-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .project-text p {
+        font-size: 0.9rem;
+    }
+
+    .read-more-button {
+        top: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Proficiency Section */
+    .proficiency {
+        min-height: auto; /* Allow height to adapt to content */
+        padding: 40px 15px;
+    }
+
+    .overlay-text {
+        width: 95%;
+        padding: 30px 10px;
+    }
+
+    .overlay-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 80%;
+        height: auto; /* Auto height to fit content */
+        padding: 15px;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .card img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .card span {
+        font-size: 0.85rem;
+    }
+
+    hr {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    /* Education Section */
+    #education {
+        min-height: auto; /* Auto height */
+        padding: 40px 15px;
+    }
+
+    #education h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5em;
+    }
+
+    .education-items {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .education-item {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .education-item h3 {
+        font-size: 1.2em;
+    }
+
+    .education-item p {
+        font-size: 0.9em;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        min-height: 80vh;
+        padding: 40px 15px;
+    }
+
+    .contact-overlay {
+        padding: 30px 15px;
+    }
+
+    .contact-overlay h2 {
+        font-size: 2rem;
+    }
+
+    .contact-overlay p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-item {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-item span {
+        font-size: 0.9rem;
+    }
 }
 
-#video-forward.active,
-#video-reverse.active {
-    display: block;
-    /* Only the active video is visible */
+/* Tablet devices (min-width: 768px and max-width: 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 25px;
+    }
+
+    /* Navbar adjustments */
+    .navbar .container {
+        height: 55px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 120vh;
+        background-position: center center;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+        padding-left: 20%;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        white-space: normal;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    /* About Section */
+    .about-section {
+        min-height: 100vh;
+        padding: 50px 25px;
+    }
+
+    .about-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .about-text {
+        max-width: 45%;
+        padding-top: 100px;
+        text-align: left;
+    }
+
+    .about-text h2 {
+        font-size: 1rem;
+        padding-top: 50px;
+    }
+
+    .about-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-image {
+        max-width: 30%;
+    }
+
+    .about-image img {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .line {
+        width: 45%;
+    }
+
+    .line-inner {
+        width: 45%;
+    }
+
+    /* Experience Section */
+    .experience-container {
+        padding-left: 25px;
+        padding-right: 25px;
+        gap: 30px;
+    }
+
+    .experience p {
+        font-size: 1.3rem;
+        padding-left: 25px;
+        text-align: left;
+    }
+
+    .e-line {
+        left: 3%;
+        height: 200px;
+    }
+
+    .e-line-inner {
+        height: 60px;
+    }
+
+    /* Project Section */
+    .project-section {
+        min-height: 70vh;
+        padding: 50px 25px;
+    }
+
+    .project-title {
+        padding-left: 25px;
+        text-align: left;
+    }
+
+    .loader {
+        width: auto;
+        position: absolute;
+        left: 25px;
+        margin-top: -40px;
+    }
+
+    .project-container {
+        flex-direction: row;
+        padding-left: 25px;
+        gap: 30px;
+    }
+
+    .project-text,
+    .project-image1,
+    .project-image2,
+    .project-image3 { /* Added project-image3 */
+        max-width: 48%;
+        padding: 10px;
+    }
+
+    /* FIX: Adjust project image container height for tablet */
+    .project-image1,
+    .project-image2,
+    .project-image3 {
+        padding-bottom: 40%; /* Adjusted for a slightly wider aspect ratio on tablet */
+    }
+
+    .project-text h1 {
+        font-size: 1.7rem;
+    }
+
+    .project-text p {
+        font-size: 0.95rem;
+    }
+
+    .read-more-button {
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    /* Proficiency Section */
+    .proficiency {
+        min-height: 100vh;
+        padding: 50px 25px;
+    }
+
+    .overlay-text {
+        width: 80%;
+        padding: 40px 20px;
+    }
+
+    .overlay-text h2 {
+        font-size: 2rem;
+    }
+
+    .row {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .card {
+        width: 18%;
+        height: auto; /* Auto height */
+        padding: 15px 10px;
+        flex-direction: column;
+    }
+
+    .card img {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .card span {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    /* Education Section */
+    #education {
+        min-height: 25em;
+        padding: 50px 25px;
+    }
+
+    #education h2 {
+        font-size: 2.2em;
+        margin-bottom: 2em;
+    }
+
+    .education-items {
+        flex-direction: row;
+        gap: 3%;
+    }
+
+    .education-item {
+        width: 48%;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        min-height: 90vh;
+        padding: 50px 25px;
+    }
+
+    .contact-overlay {
+        padding: 40px 20px;
+    }
+
+    .contact-overlay h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-overlay p {
+        font-size: 1.1rem;
+    }
+
+    .contact-links {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .contact-item {
+        width: auto;
+        padding: 15px;
+    }
+
+    .contact-item span {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop/Laptop devices (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Navbar */
+    .navbar .container {
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 150vh;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+        padding-left: 33%;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* About Section */
+    .about-section {
+        min-height: 130vh;
+        padding: 0 20px;
+    }
+
+    .about-container {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .about-text {
+        max-width: 50%;
+        padding-top: 200px;
+        text-align: left;
+    }
+
+    .about-text h2 {
+        padding-top: 200px;
+        font-size: 1rem;
+    }
+
+    .about-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-image {
+        max-width: 20%;
+    }
+
+    .about-image img {
+        padding-left: 250px;
+        max-width: 170%;
+    }
+
+    .line {
+        width: 50%;
+    }
+
+    .line-inner {
+        width: 50%;
+    }
+
+    /* Experience Section */
+    .experience-container {
+        padding-left: 40px;
+        padding-right: 40px;
+        flex-direction: row;
+        gap: normal;
+    }
+
+    .experience p {
+        font-size: 1.4rem;
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .e-line {
+        left: 3%;
+        height: 250px;
+    }
+
+    .e-line-inner {
+        top: 25%;
+        height: 75px;
+    }
+
+    /* Project Section */
+    .project-section {
+        min-height: 80vh;
+        padding: 20px;
+    }
+
+    .project-title {
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .loader {
+        width: 25%;
+        position: absolute;
+        margin-top: -40px;
+        left: auto;
+    }
+
+    .project-container {
+        padding-left: 20px;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .project-text,
+    .project-image1,
+    .project-image2,
+    .project-image3 { /* Added project-image3 */
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    /* FIX: Adjust project image container height for desktop */
+    .project-image1,
+    .project-image2,
+    .project-image3 {
+        padding-bottom: 28%; /* Reset to your initial desktop aspect ratio */
+    }
+
+    .project-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-text p {
+        font-size: 1rem;
+    }
+
+    .read-more-button {
+        width: auto;
+        justify-content: space-between;
+    }
+
+    /* Proficiency Section */
+    .proficiency {
+        min-height: 130vh;
+        padding: 60px 20px; /* Adjust padding for desktop */
+    }
+
+    .overlay-text {
+        width: 90%;
+        padding: 50px 20px;
+    }
+
+    .overlay-text h2 {
+        font-size: 2rem;
+    }
+
+    .row {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .card {
+        width: 13%;
+        height: auto; /* Auto height */
+        min-height: 80px; /* Minimum height */
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px; /* Add padding */
+    }
+
+    .card img {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .card span {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    /* Education Section */
+    #education {
+        min-height: 30em;
+        padding: 2em 1em;
+    }
+
+    #education h2 {
+        font-size: 2.5em;
+        margin-bottom: 2em;
+    }
+
+    .education-items {
+        flex-direction: row;
+        gap: 2%;
+    }
+
+    .education-item {
+        width: 48%;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .contact-overlay {
+        padding: 50px 20px;
+    }
+
+    .contact-overlay h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-overlay p {
+        font-size: 1.2rem;
+    }
+
+    .contact-links {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .contact-item {
+        width: auto;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+
+    .contact-item span {
+        font-size: 1rem;
+    }
 }
