@@ -1402,7 +1402,7 @@ hr {
     }
 
     .contact-links {
-        flex-direction: row;
+        flex-direction:column;
         gap: 25px;
     }
 
