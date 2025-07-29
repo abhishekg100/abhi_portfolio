@@ -5,19 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABHISHEK.G</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css"> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-
-
 </head>
 
 <body>
 
-
-
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <h1 class="logo">ABHISHEK GAONKAR</h1>
@@ -33,12 +26,9 @@
         </div>
     </nav>
 
-
-    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
             <h1 id="random-text"></h1>
-            <!-- <p>I'm Adarsh, a passionate developer ready to bring your ideas to life.</p> -->
         </div>
     </header>
 
@@ -98,11 +88,8 @@
         window.addEventListener("load", animateText);
     </script>
 
-
-    <!-- Sections -->
     <section class="about-section" id="about">
         <div class="about-container">
-
             <div class="about-text">
                 <h2>Know About Me</h2>
                 <h1>Web Designer</h1>
@@ -115,7 +102,6 @@
                 <div class="line">
                     <div class="line-inner"></div>
                 </div>
-
             </div>
             <script>document.addEventListener('DOMContentLoaded', () => {
                     const aboutText = document.querySelector('.about-text');
@@ -151,7 +137,6 @@
                     line.style.left = `${linePosition}px`;
                 });
             </script>
-            <!-- Right Image Section -->
             <div class="about-image">
                 <img src="about-abhi.jpg" alt="Profile Image">
             </div>
@@ -176,7 +161,6 @@
         </div>
     </section>
 
-
     <section class="experience" id="experience">
         <p>MY EXPERIENCES</p>
 
@@ -188,28 +172,10 @@
                 <h3>MERN Stack Website Developer @ SOFTIONIK SOLUTIONS PVT LTD</h3>
                 <p>March - June</p>
                 <ul>
-                    <!-- <li>Diagnosed and resolved website performance, security and functionality issues.</li>
-                    <li>Managed server maintenance, API integrations and hosting-related troubleshooting..</li>
-                    <li>Optimized website speed and performance using caching, minification and database indexing.</li> -->
                     <li> Developed a real-time web chat app (Blink_Chat) using React, Node.js, Socket.IO, MongoDB, and Cloudinary with secure login and live messaging.</li>
-                    <li>Built full-stack architecture with responsive UI, used Socket.IO for real-time updates, and ensured cross-browser compatibility through testing.
-
-                    </li>
+                    <li>Built full-stack architecture with responsive UI, used Socket.IO for real-time updates, and ensured cross-browser compatibility through testing.</li>
                 </ul>
             </div>
-
-            <!-- <div class="experience-item">
-                <h3>Web Developer Intern @ Afame Technologies</h3>
-                </h3>
-                <p>Nov - Jan.</p>
-                <ul>
-                    <li>Worked in a team responsible for building interfaces using technologies like React, Tailwind
-                        CSS,
-                        and Bootstrap.</li>
-                    <li>Assisting in designing and developing web applications.</li>
-                    <li>Gaining practical experience while contributing to front-end and back-end development.</li>
-                </ul>
-            </div> -->
         </div>
     </section>
     <script>
@@ -250,135 +216,67 @@
         });
     </script>
 
-
-    <!-- Project Section -->
     <section class="project-section" id="projects">
-
         <div class="project-title">
-
             <p>PROJECTS</p>
             <div class="item">
                 <i class="loader --3"></i>
             </div>
-            <!-- <div class="p-line">
-                <div class="p-line-inner"></div>
-            </div> -->
-
         </div>
         <script>
-            const line4 = document.querySelector('.p-line-inner');
+            // Note: This script is for the p-line, which seems to be commented out in your CSS.
+            // If you intend to use it, uncomment the .p-line and .p-line-inner CSS.
+            const pLineInner = document.querySelector('.p-line-inner');
+            if (pLineInner) { // Check if element exists
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+                    const lineWidth = pLineInner.offsetWidth;
+                    const maxScroll = document.body.scrollHeight - window.innerHeight;
 
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                const lineWidth = line4.offsetWidth;
-                const maxScroll = document.body.scrollHeight - window.innerHeight;
+                    const scrollProgress = scrollY / maxScroll;
+                    const linePosition = scrollProgress * lineWidth;
 
-                const scrollProgress = scrollY / maxScroll;
-                const linePosition = scrollProgress * lineWidth;
-
-                line4.style.left = `${60 + linePosition}px`;
-            });
+                    pLineInner.style.left = `${60 + linePosition}px`;
+                });
+            }
         </script>
         <div class="project-container">
-            <!-- Text Section -->
             <div class="project-text">
                 <h1>Blink_Chat</h1>
                 <p class="technology">Technology: Web Development</p>
 
                 <ul class="features">
-                    <li>Built Blink_Chat using React.js, Node.js, and Socket.IO for real-time messaging.
-                        Enabled instant chat, profile updates, and online/offline status—all in the browser.</li>
-                    <li>Designed a responsive UI with TailwindCSS and React.js.
-                        Integrated Cloudinary for fast, scalable image and media storage.</li>
-                    <li>Handled everything from planning to deployment with CI/CD pipelines.
-                        Conducted unit, integration, and UI tests for performance and reliability.</li>
+                    <li>Built Blink_Chat using React.js, Node.js, and Socket.IO for real-time messaging. Enabled instant chat, profile updates, and online/offline status—all in the browser.</li>
+                    <li>Designed a responsive UI with TailwindCSS and React.js. Integrated Cloudinary for fast, scalable image and media storage.</li>
+                    <li>Handled everything from planning to deployment with CI/CD pipelines. Conducted unit, integration, and UI tests for performance and reliability.</li>
                 </ul>
-                <button class="read-more-button" id="tran">
+                <button class="read-more-button" id="tran_blinkchat">
                     <span>Read More</span>
                     <span>→</span>
                 </button>
-                <div class="reveal" id="reveal"></div>
-
-                <script>
-                    const pages = ["page2.html"];
-                    let currentPage = 0;
-
-                    const button = document.getElementById("tran");
-                    button.addEventListener("click", (event) => {
-                        const buttonRect = button.getBoundingClientRect();
-                        const x = buttonRect.left + buttonRect.width / 2;
-                        const y = buttonRect.top + buttonRect.height / 2;
-
-                        // Trigger the animation
-                        const reveal = document.getElementById("reveal");
-                        reveal.style.backgroundColor = "#000"; // Set the transition color
-
-                        anime({
-                            targets: reveal,
-                            clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
-                            easing: "easeInOutQuad",
-                            duration: 1000,
-                            complete: () => {
-                                // Increment the page index
-                                currentPage++;
-
-                                // Check if there are more pages
-                                if (currentPage >= pages.length) {
-                                    currentPage = 0; // Reset to the first page if it exceeds
-                                }
-
-                                // Redirect to the next page
-                                window.location.href = pages[currentPage];
-                            }
-                        });
-                    });
-                </script>
-
-                
-
+                <div class="reveal" id="reveal_blinkchat"></div>
             </div>
 
-
-            <!-- Image Carousel Section -->
             <div class="project-image1">
-                <img src="pro1.jpeg" alt="Rider Detection" class="active">
-                <img src="pro2.jpeg" alt="Processing Data">
-                <img src="pro3.jpeg" alt="Generated Reports">
-                <img src="pro4.jpeg" alt="Report Details">
-                <img src="pro5.jpeg" alt="Twilio Alerts">
+                <img src="pro1.jpeg" alt="Blink Chat Screenshot 1" class="active">
+                <img src="pro2.jpeg" alt="Blink Chat Screenshot 2">
+                <img src="pro3.jpeg" alt="Blink Chat Screenshot 3">
+                <img src="pro4.jpeg" alt="Blink Chat Screenshot 4">
+                <img src="pro5.jpeg" alt="Blink Chat Screenshot 5">
             </div>
         </div>
     </section>
 
-    <script>
-        // Image Carousel JavaScript
-        const images = document.querySelectorAll('.project-image1 img');
-        let currentIndex = 0;
-
-        function showNextImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        // Switch images every 3 seconds
-        setInterval(showNextImage, 2000);
-    </script>
     <section class="project-section" id="clinic-appointment">
-
         <div class="project-container">
-            <!-- Image Section -->
             <div class="project-image2">
-                <img src="C1.jpeg" alt="Clinic Appointment System" class="active">
-                <img src="C2.jpeg" alt="Appointment Scheduling">
-                <img src="C3.jpeg" alt="Doctor Availability">
-                <img src="C4.jpeg" alt="Patient Management">
-                <img src="C5.jpeg" alt="doc_image">
+                <img src="C1.jpeg" alt="Clinic Appointment System Screenshot 1" class="active">
+                <img src="C2.jpeg" alt="Clinic Appointment System Screenshot 2">
+                <img src="C3.jpeg" alt="Clinic Appointment System Screenshot 3">
+                <img src="C4.jpeg" alt="Clinic Appointment System Screenshot 4">
+                <img src="C5.jpeg" alt="Clinic Appointment System Screenshot 5">
             </div>
 
-
-            
-            <!-- Text Section -->
             <div class="project-text">
                 <h1>Clinic Appointment System</h1>
                 <p class="technology">Technology: Web Development</p>
@@ -388,183 +286,47 @@
                     <li>Doctors can manage their availability and view patient details.</li>
                     <li>Admin can oversee all appointments, update clinic details, and manage users.</li>
                 </ul>
-                <!-- <a href="#" class="read-more" onclick="showPDF(event)">Read More →</a> -->
-
-                <button class="read-more-button" id="tran2">
+                <button class="read-more-button" id="tran_clinic">
                     <span>Read More</span>
                     <span>→</span>
                 </button>
-                <div class="reveal2" id="reveal2"></div>
-
-
-
-
-                <script>
-                    const pages2 = ["Rp2.html"];
-                    let currentPage2 = 0;
-
-                    const button2 = document.getElementById("tran2"); // Correct reference to button2
-                    button2.addEventListener("click", (event) => { // Use button2 instead of button
-                        const buttonRect = button2.getBoundingClientRect();
-                        const x = buttonRect.left + buttonRect.width / 2;
-                        const y = buttonRect.top + buttonRect.height / 2;
-
-                        // Trigger the animation
-                        const reveal2 = document.getElementById("reveal2");
-                        reveal2.style.backgroundColor = "#000"; // Set the transition color
-
-                        anime({
-                            targets: reveal2,
-                            clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
-                            easing: "easeInOutQuad",
-                            duration: 1000,
-                            complete: () => {
-                                // Increment the page index
-                                currentPage2++;
-
-                                // Check if there are more pages
-                                if (currentPage2 >= pages2.length) {
-                                    currentPage2 = 0; // Reset to the first page if it exceeds
-                                }
-
-                                // Redirect to the next page
-                                window.location.href = pages2[currentPage2];
-                            }
-                        });
-                    });
-                </script>
-
+                <div class="reveal2" id="reveal_clinic"></div>
             </div>
+        </div>
+    </section>
 
-
-
-            <div class="project-container">
-            <!-- Text Section -->
+    <section class="project-section" id="srushti-power-system">
+        <div class="project-container">
             <div class="project-text">
                 <h1>Srushti Power System</h1>
                 <p class="technology">Technology: Web Development</p>
 
                 <ul class="features">
-                    <li>Developed a Responsive E-Commerce Platform – Built a user-friendly frontend with React.js, HTML,
-                        and CSS for seamless solar product purchasing.</li>
-                    <li>Built a Scalable & Secure Backend – Used Node.js and MongoDB, integrated Stripe for secure
-                        payments, and implemented an admin panel for order management.</li>
-                    <li>Optimized Media & Performance – Leveraged Cloudinary for efficient media storage and delivery,
-                        enhancing website speed and user experience.</li>
+                    <li>Developed a Responsive E-Commerce Platform – Built a user-friendly frontend with React.js, HTML, and CSS for seamless solar product purchasing.</li>
+                    <li>Built a Scalable & Secure Backend – Used Node.js and MongoDB, integrated Stripe for secure payments, and implemented an admin panel for order management.</li>
+                    <li>Optimized Media & Performance – Leveraged Cloudinary for efficient media storage and delivery, enhancing website speed and user experience.</li>
                 </ul>
-                <button class="read-more-button" id="tran">
+                <button class="read-more-button" id="tran_srushti">
                     <span>Read More</span>
                     <span>→</span>
                 </button>
-                <div class="reveal" id="reveal"></div>
-
-                <script>
-                    const pages = ["page2.html"];
-                    let currentPage = 0;
-
-                    const button = document.getElementById("tran");
-                    button.addEventListener("click", (event) => {
-                        const buttonRect = button.getBoundingClientRect();
-                        const x = buttonRect.left + buttonRect.width / 2;
-                        const y = buttonRect.top + buttonRect.height / 2;
-
-                        // Trigger the animation
-                        const reveal = document.getElementById("reveal");
-                        reveal.style.backgroundColor = "#000"; // Set the transition color
-
-                        anime({
-                            targets: reveal,
-                            clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
-                            easing: "easeInOutQuad",
-                            duration: 1000,
-                            complete: () => {
-                                // Increment the page index
-                                currentPage++;
-
-                                // Check if there are more pages
-                                if (currentPage >= pages.length) {
-                                    currentPage = 0; // Reset to the first page if it exceeds
-                                }
-
-                                // Redirect to the next page
-                                window.location.href = pages[currentPage];
-                            }
-                        });
-                    });
-                </script>
-
-                
-
+                <div class="reveal" id="reveal_srushti"></div>
             </div>
 
-
-            <!-- Image Carousel Section -->
-            <div class="project-image1">
-                <img src="pro1.jpeg" alt="Rider Detection" class="active">
-                <img src="pro2.jpeg" alt="Processing Data">
-                <img src="pro3.jpeg" alt="Generated Reports">
-                <img src="pro4.jpeg" alt="Report Details">
-                <img src="pro5.jpeg" alt="Twilio Alerts">
-            </div>
+            <div class="project-image3">
+                <img src="srushti1.jpeg" alt="Srushti Power System Screenshot 1" class="active">
+                <img src="srushti2.jpeg" alt="Srushti Power System Screenshot 2">
+                <img src="srushti3.jpeg" alt="Srushti Power System Screenshot 3">
+                </div>
         </div>
     </section>
 
-    <script>
-        // Image Carousel JavaScript
-        const images = document.querySelectorAll('.project-image1 img');
-        let currentIndex = 0;
-
-        function showNextImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        // Switch images every 3 seconds
-        setInterval(showNextImage, 2000);
-    </script>
-    <section class="project-section" id="clinic-appointment">
-
-        <div class="project-container">
-            <!-- Image Section -->
-            <div class="project-image2">
-                <img src="C1.jpeg" alt="Clinic Appointment System" class="active">
-                <img src="C2.jpeg" alt="Appointment Scheduling">
-                <img src="C3.jpeg" alt="Doctor Availability">
-                <img src="C4.jpeg" alt="Patient Management">
-                <img src="C5.jpeg" alt="doc_image">
-            </div>
-        </div>
-    </section>
-
-
-    <script>
-        // Image Carousel JavaScript
-        const images2 = document.querySelectorAll('.project-image2 img');
-        let currentIndex2 = 0;
-
-        function showNextImage() {
-            images2[currentIndex2].classList.remove('active');
-            currentIndex2 = (currentIndex2 + 1) % images2.length;
-            images2[currentIndex2].classList.add('active');
-        }
-
-        // Switch images every 3 seconds
-        setInterval(showNextImage, 2000);
-    </script>
-
-
-    
     <section id="proficiency" class="proficiency">
-        <!-- Background Video Wrapper -->
         <video autoplay muted loop id="background-video">
             <source src="eart_line2.mp4" type="video/mp4">
-            <!-- Fallback in case the video format is not supported -->
             Your browser does not support the video tag.
         </video>
 
-
-        <!-- Your text content remains unchanged -->
         <div class="overlay-text">
             <h2>Proficiency</h2>
             <div class="row">
@@ -578,7 +340,7 @@
                 </div>
                 <div class="card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg"
-                        alt="JavaScript">
+                        alt=".Net">
                     <span>.Net</span>
                 </div>
                 <div class="card">
@@ -608,101 +370,19 @@
                     <span>Python</span>
                 </div>
                 <div class="card">
-                    <img src="https://adarsh1859.github.io/portfolio/assets/aws.png" alt="JavaScript">
+                    <img src="https://adarsh1859.github.io/portfolio/assets/aws.png" alt="AWS">
                     <span>AWS</span>
                 </div>
-                <!-- <div class="card" style="padding-left: 1%;">
-                    <img src="https://adarsh1859.github.io/portfolio/assets/ml.png" alt="Machine Learning">
-                    <span>SQL</span>
-                </div> -->
                 <div class="card">
                     <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="MS Excel">
                     <span>MS Excel</span>
                 </div>
             </div>
-            <hr>
-            <!-- <h2>Familarities</h2>
-            <div class="row">
-                <div class="card">
-                    <img src="	https://adarsh1859.github.io/portfolio/assets/c.png" alt="C">
-                    <span>C</span>
-                </div>
-                <div class="card">
-                    <img src="https://adarsh1859.github.io/portfolio/assets/reactnative.png" alt="SQL">
-                    <span>React Native</span>
-                </div>
-                <div class="card">
-                    <img src="data:image/png;base64,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"
-                        alt="CSS">
-                    <span>Flutter</span>
-                </div>
-                <div class="card">
-                    <img src="	https://adarsh1859.github.io/portfolio/assets/tailwind.png" alt="HTML">
-                    <span>Tailwind</span>
-                </div>
-                <div class="card">
-                    <img src="https://adarsh1859.github.io/portfolio/assets/flask.png" alt="JavaScript">
-                    <span>Flask</span>
-                </div>
-                <div class="card">
-                    <img src="https://adarsh1859.github.io/portfolio/assets/aws.png" alt="JavaScript">
-                    <span>AWS</span>
-                </div>
-            </div> -->
         </div>
         <div class="star-container"></div>
     </section>
-    <script> const starContainer = document.querySelector('.star-container');
-        for (let i = 0; i < 200; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = Math.random() * 100 + '%'; // Adjust to percentage
-            star.style.top = Math.random() * 100 + '%'; // Adjust to percentage
-            star.style.animationDelay = `${Math.random() * 5}s`;
-            starContainer.appendChild(star);
-        }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const proficiencySection = document.querySelector('#proficiency');
-            const cards = document.querySelectorAll('#proficiency .card');
 
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible'); // Add the visible class
-                        }
-                    });
-                },
-                {
-                    threshold: 0.1, // Trigger when 20% of the element is visible
-                }
-            );
-
-            // Observe the main section
-            observer.observe(proficiencySection);
-
-            // Add delays for cards to animate in a staggered fashion
-            cards.forEach((card, index) => {
-                card.style.setProperty('--card-delay', `${index * 0.1}s`); // Stagger delay by 0.1s
-                observer.observe(card);
-            });
-        });
-
-    </script>
-
-
-
-
-    <!-- <section id="education" class="section">
-        <div class="container">
-            <h2>Education</h2>
-            <p>Detail your educational background here.</p>
-        </div>
-    </section> -->
     <section id="education" class="section">
-
         <div class="container">
             <h2>Education</h2>
             <div class="education-items">
@@ -720,21 +400,7 @@
         </div>
     </section>
 
-
     <section id="contact" class="contact-section">
-        <!-- <video autoplay muted loop id="contact-bg-video">
-            <source src="c-bg3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video id="video-forward" muted>
-            <source src="c-bg3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video id="video-reverse" muted>
-            <source src="c-bg32.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video> -->
-
         <div class="contact-overlay">
             <div class="container3">
                 <h2>Connect with me</h2>
@@ -755,7 +421,7 @@
                         <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn">
                         <span>LinkedIn</span>
                     </a>
-                   <a href="Abhishek Resume.pdf" target="_blank" class="contact-item">
+                    <a href="Abhishek Resume.pdf" target="_blank" class="contact-item">
                         <img src="https://img.icons8.com/fluency/48/download.png" alt="Resume">
                         <span>Download Resume</span>
                     </a>
@@ -763,30 +429,171 @@
             </div>
         </div>
         <script>
+            // These scripts are for the contact section's background videos, which are currently commented out in HTML.
+            // If you uncomment the videos in HTML, uncomment this JS too.
+            /*
             const videoForward = document.getElementById('video-forward');
             const videoReverse = document.getElementById('video-reverse');
 
-            videoForward.classList.add('active');
-            videoForward.play();
-
-            videoForward.addEventListener('ended', () => {
-                videoForward.classList.remove('active');
-                videoReverse.classList.add('active');
-                videoReverse.play();
-            });
-
-            videoReverse.addEventListener('ended', () => {
-                videoReverse.classList.remove('active');
+            if (videoForward && videoReverse) { // Check if video elements exist
                 videoForward.classList.add('active');
                 videoForward.play();
-            });
 
+                videoForward.addEventListener('ended', () => {
+                    videoForward.classList.remove('active');
+                    videoReverse.classList.add('active');
+                    videoReverse.play();
+                });
+
+                videoReverse.addEventListener('ended', () => {
+                    videoReverse.classList.remove('active');
+                    videoForward.classList.add('active');
+                    videoForward.play();
+                });
+            }
+            */
         </script>
     </section>
 
-
-    <!-- JavaScript -->
     <script>
+        // Image Carousel JavaScript for project-image1 (Blink_Chat)
+        const images_project1 = document.querySelectorAll('.project-image1 img');
+        let currentIndex_project1 = 0;
+
+        function showNextImage_project1() {
+            if (images_project1.length === 0) return; // Prevent errors if no images
+            images_project1[currentIndex_project1].classList.remove('active');
+            currentIndex_project1 = (currentIndex_project1 + 1) % images_project1.length;
+            images_project1[currentIndex_project1].classList.add('active');
+        }
+        // Start after a short delay to ensure images are loaded
+        setTimeout(() => {
+            if (images_project1.length > 0) {
+                 images_project1[0].classList.add('active'); // Ensure first image is active on load
+                 setInterval(showNextImage_project1, 2000);
+            }
+        }, 100);
+
+
+        // Image Carousel JavaScript for project-image2 (Clinic Appointment)
+        const images_project2 = document.querySelectorAll('.project-image2 img');
+        let currentIndex_project2 = 0;
+
+        function showNextImage_project2() {
+            if (images_project2.length === 0) return; // Prevent errors if no images
+            images_project2[currentIndex_project2].classList.remove('active');
+            currentIndex_project2 = (currentIndex_project2 + 1) % images_project2.length;
+            images_project2[currentIndex_project2].classList.add('active');
+        }
+        setTimeout(() => {
+            if (images_project2.length > 0) {
+                images_project2[0].classList.add('active');
+                setInterval(showNextImage_project2, 2000);
+            }
+        }, 100);
+
+
+        // Image Carousel JavaScript for project-image3 (Srushti Power System)
+        const images_project3 = document.querySelectorAll('.project-image3 img');
+        let currentIndex_project3 = 0;
+
+        function showNextImage_project3() {
+            if (images_project3.length === 0) return; // Prevent errors if no images
+            images_project3[currentIndex_project3].classList.remove('active');
+            currentIndex_project3 = (currentIndex_project3 + 1) % images_project3.length;
+            images_project3[currentIndex_project3].classList.add('active');
+        }
+        setTimeout(() => {
+            if (images_project3.length > 0) {
+                images_project3[0].classList.add('active');
+                setInterval(showNextImage_project3, 2000);
+            }
+        }, 100);
+
+
+        // JavaScript for Proficiency Card Animation
+        const proficiencySection = document.querySelector('#proficiency');
+        const cards = document.querySelectorAll('#proficiency .card');
+
+        const observerProficiency = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Add the visible class to the section
+                        // Also add visible to cards when the section is visible
+                        cards.forEach((card, index) => {
+                            card.classList.add('visible');
+                        });
+                    } else {
+                        // Optional: remove visible class if you want animation to replay on scroll back up
+                        entry.target.classList.remove('visible');
+                        cards.forEach((card) => {
+                            card.classList.remove('visible');
+                        });
+                    }
+                });
+            },
+            {
+                threshold: 0.1, // Trigger when 10% of the section is visible
+            }
+        );
+        observerProficiency.observe(proficiencySection);
+
+
+        // JavaScript for Read More Button Animations
+        // Blink_Chat button
+        const button_blinkchat = document.getElementById("tran_blinkchat");
+        button_blinkchat.addEventListener("click", (event) => {
+            const buttonRect = button_blinkchat.getBoundingClientRect();
+            const x = buttonRect.left + buttonRect.width / 2;
+            const y = buttonRect.top + buttonRect.height / 2;
+            const reveal_blinkchat = document.getElementById("reveal_blinkchat");
+            reveal_blinkchat.style.backgroundColor = "#000";
+            anime({
+                targets: reveal_blinkchat,
+                clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
+                easing: "easeInOutQuad",
+                duration: 1000,
+                complete: () => { window.location.href = "page2.html"; } // Direct link for simplicity
+            });
+        });
+
+        // Clinic Appointment button
+        const button_clinic = document.getElementById("tran_clinic");
+        button_clinic.addEventListener("click", (event) => {
+            const buttonRect = button_clinic.getBoundingClientRect();
+            const x = buttonRect.left + buttonRect.width / 2;
+            const y = buttonRect.top + buttonRect.height / 2;
+            const reveal_clinic = document.getElementById("reveal_clinic");
+            reveal_clinic.style.backgroundColor = "#000";
+            anime({
+                targets: reveal_clinic,
+                clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
+                easing: "easeInOutQuad",
+                duration: 1000,
+                complete: () => { window.location.href = "Rp2.html"; } // Direct link for simplicity
+            });
+        });
+
+        // Srushti Power System button
+        const button_srushti = document.getElementById("tran_srushti");
+        button_srushti.addEventListener("click", (event) => {
+            const buttonRect = button_srushti.getBoundingClientRect();
+            const x = buttonRect.left + buttonRect.width / 2;
+            const y = buttonRect.top + buttonRect.height / 2;
+            const reveal_srushti = document.getElementById("reveal_srushti");
+            reveal_srushti.style.backgroundColor = "#000";
+            anime({
+                targets: reveal_srushti,
+                clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
+                easing: "easeInOutQuad",
+                duration: 1000,
+                complete: () => { window.location.href = "page3.html"; } // Direct link for simplicity
+            });
+        });
+
+
+        // JavaScript for Navbar (kept at the end of body for better performance)
         const navbar = document.getElementById("navbar");
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
@@ -811,9 +618,21 @@
                 navLinks.classList.remove('active');
             });
         });
+
+        // Star animation for proficiency (already in your code, keeping for completeness)
+        const starContainer = document.querySelector('.star-container');
+        if (starContainer) { // Check if element exists
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                starContainer.appendChild(star);
+            }
+        }
+
     </script>
-
-
 </body>
 
 </html>
